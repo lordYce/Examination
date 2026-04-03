@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Villa</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene loading-screen="enabled: false">
+        <a-assets>
+            <img id="floor" src="textures/floortexture.jpg" alt="Floor Texture">
+            <a-asset-item id="pool" src="textures/swimming_pool.glb"></a-asset-item>
+            <a-asset-item id="villa-model" src="textures/villa_lisse_8_-_furniture_no_curtains (1).glb"></a-asset-item>
+            <a-asset-item id="basketballcourt" rotation="0 90 0" scale="1.5 1.5 1.5" position="-13.51451 0.30179 0" src="textures/basketballcourt.glb"></a-asset-item>
+            <a-asset-item id="car" position="0.42721 2.45903 8.30274" scale="1.5 1.5 1.5" src="textures/porsche_911_930_turbo_1975.glb"></a-asset-item>
+            <a-asset-item id="sit" scale="0.015 0.01 0.02" position="-13.0415 0.0196 -15.31306" src="textures/picnic_wooden_table.glb"></a-asset-item>
+            <a-asset-item id="tree" scale="0.01 0.01 0.01" position="-20 0 -20" src="textures/palm_tree_realistic.glb"></a-asset-item>
+        </a-assets>
+        <a-plane position="-1.35982 0.09 0" rotation="-90 0 0" width="100" height="100"  src="#floor" repeat="20 20" id="fplane" scale="1 1 1"></a-plane>
+
+        <a-entity gltf-model="#villa-model" position="1.07241 0 -2.4762" scale="1 1 1" id="vill"></a-entity>
+        <a-entity gltf-model="#pool" position="36.8 20 8" scale="0.01 0.01 0.01" id="swimpool"></a-entity>
+        <a-entity gltf-model="#basketballcourt" position="-14.634 0.920 0" scale="2 2 2" id="basketballcourt" rotation="0 90 0"></a-entity>
+        <a-entity gltf-model="#car" position="-0.060 2.514 7.099" scale="1.5 1.5 1.5" id="car"></a-entity>
+        <a-entity gltf-model="#sit" position="-14.418 0 -17.329" scale="0.01 0.01 0.01" id="sit"></a-entity>
+        <a-entity gltf-model="#tree" position="11.994 -0.005 5.609" scale="1 1 1" id="tree" rotation="1.187 140.171 -3.793"></a-entity>
+
+        <a-sky color="#B0E0E6" id="skky" scale="-1 1 1"></a-sky>
+<!-- ══ CINEMATIC ENTRANCE CAMERA ══ -->
+<a-entity
+  id="player-rig"
+  position="0 1.7 28"
+  rotation="0 360 0"
+  movement-controls="speed: 0.08; fly: false">
+
+  <a-camera
+    id="main-camera"
+    look-controls="pointerLockEnabled: true"
+    wasd-controls="acceleration: 25"
+    rotation="-5 0 0"
+    fov="75"
+    near="0.05"
+    far="200">
+  </a-camera>
+
+</a-entity>
+    </a-scene>
+</body>
+</html>
